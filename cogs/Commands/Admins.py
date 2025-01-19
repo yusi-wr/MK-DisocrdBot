@@ -35,7 +35,7 @@ class Admins(commands.Cog, name="الأدمنس"):
 	#command ban members
 	@commands.command(name="ban", aliases=["بان", "حظر", "ابلع"], help="**الإختصارات:\n(بان | حظر | ابلع)\n- #ban @member ثم اكتب السبب**", description="حظر المستخدم من الخادم")
 	@commands.guild_only()
-	async def Ban(self, ctx, member:  Member, reason = None):
+	async def Ban(self, ctx, member:  Member, *,reason: str = None):
 		"""يقوم بتبنيد عضو من السيرفر"""
 		await self.cmds.moderation.Ban(ctx=ctx, member=member, reason=reason)
 	

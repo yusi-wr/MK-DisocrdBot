@@ -6,6 +6,7 @@ from core import extensions
 from core.embeds import embed
 from dotenv import load_dotenv, find_dotenv
 import asyncio
+from keep_alive import keep_alive
 
 
 load_dotenv(find_dotenv())
@@ -32,6 +33,7 @@ async def UnloadExtensions(interaction: nextcord.Interaction):
 #لا تحذف ولا تغيير الا لو كنت تعرف انت تعمل ايه
 @sub_extensions.subcommand(name="load", description="لأعادة تنشيط الأوامر والأحداث")
 async def LoadExtensions(interaction: nextcord.Interaction):
+	from core import Helper
 	await interaction.response.defer(ephemeral=True)
 	if Helper.check_its_admin(interaction.user, owner_only=True):
 		extensions.Load(bot)
@@ -43,4 +45,5 @@ async def LoadExtensions(interaction: nextcord.Interaction):
 
 if __name__ == "__main__":
 	extensions.Load(bot)
+	keep_alive()
 	bot.run(os.getenv("TOKEN"))

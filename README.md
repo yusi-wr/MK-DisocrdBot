@@ -2,3 +2,6 @@
 
 - Language: Arabic
 - [Discord Server](https://discord.gg/5FqRnMHKHR)
+
+
+- Developed by: YUSI

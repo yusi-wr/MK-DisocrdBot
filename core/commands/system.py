@@ -34,7 +34,7 @@ class SystemCommands:
 		 	await inter.send(embed=em, view=view)
 		
 	#function command event Q game cards
-	async def EventQGame(self, inter: Interaction, channel: TextChannel, start_time: str, count_round: int = 15, prize: int = 10000, desc: str = None, from_archetype: str = None):
+	async def EventQGame(self, inter: Interaction, channel: TextChannel, start_time: str, count_round: int , prize: int, desc: str = None, from_archetype: str = None):
 		await inter.response.defer(ephemeral=True)
 		user = inter.user
 		
@@ -44,8 +44,6 @@ class SystemCommands:
 			
 			if desc is None:
 				desc = "السلام عليكم ايها المبارزون الاساطير هل انتم مستعدين سوف ناخذكم في رحلة من التحديات والمتعة في هذه الفعالية المميزة كن الاسرع وتلغب على خصومك في الأسئلة وكن الاول الذي يخرج منتصرا"
-			if prize < 2500:
-				prize = randint(4000, 10000)
 			
 			em = embed(user=inter.guild.me, desc=desc, icon_url="https://cdn.discordapp.com/emojis/1106433515001761802.png", image_url=images["tournament_bg"], title="**YGO EVENTS**")
 			em.add_field(name=f"**{emojis['cup']} الجائزة**", value=f">>> - **{emojis['coins']} {prize:,} فضة**")

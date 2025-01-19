@@ -60,7 +60,7 @@ class SlashCommands(commands.Cog):
 	async def QEventsCards(self, interaction: Interaction,
 		channel: TextChannel = SlashOption(name="القناة", description="القناة التي راح نقيم فيها الفعالية"),
 		start_time: str = SlashOption(name="تاريخ-البدء", description="اختر تاريخ بدء الفعالية", choices=QEventStartTime),
-		prize: int = SlashOption(name="جائزة", description="اكتب رقم الفضة التي يحصل عليها الفايز في الفعالية", required=False),
+		prize: int = SlashOption(name="جائزة", description="اكتب رقم الفضة التي يحصل عليها الفايز في الفعالية", default=7500),
 		count_round: int = SlashOption(name="عدد-الجولات", description="اكتب عدد الحولات في هذه الفعالية", default=15),
 		desc: str = SlashOption(name="وصف", description="هل تريد اضافة وصف خاص بك؟", default=None),
 		from_archetype: str = None

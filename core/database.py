@@ -28,7 +28,6 @@ database = Client[config["database_name"]]
 #Collections
 class db:
 	users = database["users"]
-	tournaments = database["tournaments"]
 	duels = database["duels"]
 	settings = database["settings"]
 	giveaway = database["giveaway"]
